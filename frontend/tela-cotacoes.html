@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotações</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .sidebar {
+      background-color: #1e1e1e;
+      min-height: 100vh;
+      width: 240px;
+      padding: 30px 20px;
+    }
+
+    .sidebar h4 {
+      color: #0074ff;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      transition: color 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #007bff;
+    }
+
+    .main-content {
+      padding: 40px;
+      flex-grow: 1;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .table {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .table thead th {
+      background-color: #2a2a2a;
+      color: #fff;
+      border-bottom: 1px solid #333;
+    }
+
+    .table tbody tr:hover {
+      background-color: #2c2c2c;
+    }
+
+    .table td,
+    .table th {
+      vertical-align: middle;
+    }
+
+    .btn-warning {
+      background-color: #ffc107;
+      border: none;
+      color: #000;
+    }
+
+    .btn-warning:hover {
+      background-color: #e0a800;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      border: none;
+    }
+
+    .btn-danger:hover {
+      background-color: #bb2d3b;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+    }
+
+    .table th,
+    .table td {
+      color: #fff;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+
+    .sidebar ul li:hover,
+    .sidebar ul li.active {
+      background-color: #333;
+    }
+
+    .modal-content {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    .form-control {
+      background-color: #2c2c2c;
+      border-color: #444;
+      color: #fff;
+    }
+
+    .form-control:focus {
+      background-color: #2c2c2c;
+      border-color: #007bff;
+      color: #fff;
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    }
+
+    .modal-header,
+    .modal-footer {
+      border-color: #333;
+    }
+
+    .close {
+      color: #fff;
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="d-flex">
+    <aside class="sidebar">
+      <h4>Portal de Compras</h4>
+      <a href="../frontend/tela-inicio.html">Dashboard</a>
+      <a href="../frontend/tela-fornecedor.html">Fornecedores</a>
+      <a href="../frontend/tela-produtos.html">Produtos</a>
+      <a href="../frontend/tela-cotacoes.html">Cotação</a>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <h2 class="fw-semibold">Cotações</h2>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNovaCotacao">Criar Nova Cotação</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID da Cotação</th>
+              <th>Fornecedor</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#COT-001</td>
+              <td>Frontal Vidros</td>
+              <td>15/07/2025</td>
+              <td><span class="badge bg-warning text-dark">Em Análise</span></td>
+              <td>
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-danger">Cancelar</button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#COT-002</td>
+              <td>Trans AM Transportes</td>
+              <td>10/07/2025</td>
+              <td><span class="badge bg-success">Aprovada</span></td>
+              <td>
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-danger" disabled>Cancelar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal fade" id="modalNovaCotacao" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Criar Nova Cotação</h5>
+          <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formNovaCotacao">
+            <div class="mb-3">
+              <label for="fornecedorSelect" class="form-label">Fornecedor</label>
+              <select class="form-select" id="fornecedorSelect">
+                <option selected>Selecione um fornecedor...</option>
+                <option value="1">Frontal Vidros</option>
+                <option value="2">Trans AM Transportes</option>
+                <option value="3">Wilton Pereira</option>
+              </select>
+            </div>
+            <hr>
+            <h6>Produtos para a cotação</h6>
+            <div id="listaProdutos">
+              <div class="row g-3 mb-3 produto-item align-items-end">
+                <div class="col-md-6">
+                  <label for="produto-1" class="form-label">Produto</label>
+                  <select class="form-select produto-select" id="produto-1">
+                    <option selected>Selecione um produto...</option>
+                    <option value="1">Vidro Temperado 8mm</option>
+                    <option value="2">Perfil de Alumínio</option>
+                    <option value="3">Kit Box Blindex</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="quantidade-1" class="form-label">Quantidade</label>
+                  <input type="number" class="form-control" id="quantidade-1" value="1" min="1">
+                </div>
+                <div class="col-md-2 d-flex justify-content-end">
+                  <button type="button" class="btn btn-danger btn-remover-produto">Remover</button>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-warning mt-3" disabled>Adicionar outro produto</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary" form="formNovaCotacao">Salvar Cotação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+      margin: 0;
+      background-color: #121212;
+      color: white;
+    }
+
+    .sidebar {
+      background-color: #1e1e1e;
+      min-height: 100vh;
+      width: 240px;
+      padding: 30px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .sidebar h4 {
+      color: #0074ff;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      transition: color 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      color: #007bff;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #1f1f1f;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .card-footer {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h4>Portal de Compras</h4>
+    <a href="../frontend/tela-inicio.html" class="active">Dashboard</a>
+    <a href="../frontend/tela-fornecedor.html">Fornecedores</a>
+    <a href="../frontend/tela-produtos.html">Produtos</a>
+    <a href="../frontend/tela-cotacoes.html">Cotação</a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <header class="mb-5">
+        <h1>Boa tarde, Guilherme</h1>
+        <p>Veja os destaques do seu portal de compras:</p>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-title">Fornecedor com mais vendas</div>
+            <div class="card-footer">PROSUL EPI’S - 52 vendas</div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-title">Produto mais vendido</div>
+            <div class="card-footer">LUVA ANTICORTE CA 32036 TAM G - 129 unidades</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Portal de Compras - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
