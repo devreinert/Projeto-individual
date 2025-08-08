@@ -152,6 +152,17 @@
         padding: 20px;
       }
     }
+
+    .footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid #333;
+    }
   </style>
 </head>
 <body>
@@ -223,24 +234,22 @@
           <form id="formNovaCotacao">
             <div class="mb-3">
               <label for="fornecedorSelect" class="form-label">Fornecedor</label>
-              <select class="form-select" id="fornecedorSelect">
-                <option selected>Selecione um fornecedor...</option>
-                <option value="1">Frontal Vidros</option>
-                <option value="2">Trans AM Transportes</option>
-                <option value="3">Wilton Pereira</option>
+              <input type="text" class="form-control" id="segmentoCotacao" placeholder="Fornecedor">
               </select>
             </div>
+            
+            <div class="mb-3">
+              <label for="segmentoCotacao" class="form-label">Segmento</label>
+              <input type="text" class="form-control" id="segmentoCotacao" placeholder="Ex: Vidros, Transportes, etc.">
+            </div>
+
             <hr>
             <h6>Produtos para a cotação</h6>
             <div id="listaProdutos">
               <div class="row g-3 mb-3 produto-item align-items-end">
                 <div class="col-md-6">
                   <label for="produto-1" class="form-label">Produto</label>
-                  <select class="form-select produto-select" id="produto-1">
-                    <option selected>Selecione um produto...</option>
-                    <option value="1">Vidro Temperado 8mm</option>
-                    <option value="2">Perfil de Alumínio</option>
-                    <option value="3">Kit Box Blindex</option>
+                  <input type="text" class="form-control" id="segmentoCotacao" placeholder="Produtos">
                   </select>
                 </div>
                 <div class="col-md-4">
