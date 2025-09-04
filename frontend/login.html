@@ -83,6 +83,7 @@
               <label for="senha" class="form-label">Senha</label>
               <input type="password" class="form-control" id="senha" placeholder="Senha" required>
             </div>
+            <a href="#" class="d-block text-end mb-3" data-bs-toggle="modal" data-bs-target="#modalEsqueciSenha">Esqueci a senha?</a>
             <a href="../frontend/tela-inicio.html" class="btn btn-primary w-100">Avançar</a>
           </form>
         </div>
@@ -104,6 +105,30 @@
             </div>
             <button type="submit" class="btn btn-outline-primary w-100">Registrar</button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalEsqueciSenha" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel" style="color:#0057ff">Recuperar Senha</h5>
+            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="color:#0057ff">
+            <p>Informe seu e-mail para receber as instruções de recuperação de senha.</p>
+            <form>
+              <div class="mb-3">
+                <label for="email-recuperacao" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email-recuperacao" placeholder="email@email.com" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Enviar</button>
+          </div>
         </div>
       </div>
     </div>
