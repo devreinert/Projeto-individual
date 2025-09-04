@@ -165,6 +165,7 @@
       border-top: 1px solid #333;
     }
 
+    
   </style>
 </head>
 <body>
@@ -205,7 +206,7 @@
               <td>vidros@vidros.com</td>
               <td>47 9875-4236</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarFornecedor">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
@@ -216,7 +217,7 @@
               <td>transporte@trans.com</td>
               <td>21 8599-4281</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarFornecedor">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
@@ -227,13 +228,15 @@
               <td>wilton@gmail.com</td>
               <td>11 9746-5628</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarFornecedor">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <!--MODAL INCLUIR FORNECEDOR-->
 
       <div class="modal fade" id="modalCadastroFornecedor" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -271,6 +274,42 @@
       </div>
 
     </main>
+  </div>
+
+  <!--MODAL EDITAR--> 
+  <div class="modal fade" id="modalEditarFornecedor" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Editar Fornecedor</h5>
+          <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="nomeEmpresaEdit" class="form-label">Nome da Empresa</label>
+              <input type="text" class="form-control" id="nomeEmpresaEdit" placeholder="Digite o nome da empresa">
+            </div>
+            <div class="mb-3">
+              <label for="cnpjEdit" class="form-label">CNPJ</label>
+              <input type="text" class="form-control" id="cnpjEdit" placeholder="Digite o CNPJ">
+            </div>
+            <div class="mb-3">
+              <label for="emailEdit" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="emailEdit" placeholder="Digite o e-mail">
+            </div>
+            <div class="mb-3">
+              <label for="contatoEdit" class="form-label">Contato</label>
+              <input type="text" class="form-control" id="contatoEdit" placeholder="Digite o contato">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer class="footer">

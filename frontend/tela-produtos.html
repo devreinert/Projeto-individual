@@ -200,7 +200,7 @@
               <td>LUVA ANTICORTE CA 32036 TAM G</td>
               <td>PRO_BL0001</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProduto">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
@@ -209,7 +209,7 @@
               <td>PROTETOR SOLAR FPS 60</td>
               <td>PRO_BL0002</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProduto">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
@@ -218,7 +218,7 @@
               <td>FURADEIRA MAKITA 220V</td>
               <td>PRO_BL0003</td>
               <td>
-                <button class="btn btn-sm btn-primary">Editar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProduto">Editar</button>
                 <button class="btn btn-sm btn-danger">Excluir</button>
               </td>
             </tr>
@@ -227,6 +227,8 @@
       </div>
     </main>
   </div>
+
+  <!--MODAL INCLUIR PRODUTO-->
 
   <div class="modal fade" id="modalCadastroProduto" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -250,6 +252,31 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
           <button type="submit" class="btn btn-primary">Salvar Produto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--MODAL EDITAR-->
+
+  <div class="modal fade" id="modalEditarProduto" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Editar Produto</h5>
+          <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="descricaoProdutoEdit" class="form-label">Descrição do Produto</label>
+              <textarea class="form-control" id="descricaoProdutoEdit" rows="3" placeholder="Digite a nova descrição do produto"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary">Salvar Alterações</button>
         </div>
       </div>
     </div>
