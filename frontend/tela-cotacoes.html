@@ -194,7 +194,7 @@
             <tr>
               <th>#</th>
               <th>ID da Cotação</th>
-              <th>Fornecedor</th>
+              <th>Fornecedor Ganhador</th>
               <th>Data</th>
               <th>Status</th>
               <th>Ações</th>
@@ -204,12 +204,12 @@
             <tr>
               <td><input type="checkbox" /></td>
               <td>#COT-001</td>
-              <td>Frontal Vidros</td>
+              <td>---------------------</td>
               <td>15/07/2025</td>
               <td><span class="badge bg-warning text-dark">Em Análise</span></td>
               <td>
-                <button class="btn btn-sm btn-primary">Detalhes</button>
-                <button class="btn btn-sm btn-danger">Cancelar</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetalhesCotacao">Detalhes</button>
+                <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modalCancelarCotacao">Cancelar</button>
               </td>
             </tr>
             <tr>
@@ -219,7 +219,7 @@
               <td>10/07/2025</td>
               <td><span class="badge bg-success">Aprovada</span></td>
               <td>
-                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetalhesCotacaoEncerrada">Detalhes</button>
                 <button class="btn btn-sm btn-danger" disabled>Cancelar</button>
               </td>
             </tr>
@@ -243,12 +243,6 @@
               <input type="text" class="form-control" id="segmentoCotacao" placeholder="Fornecedor">
               </select>
             </div>
-            
-            <div class="mb-3">
-              <label for="segmentoCotacao" class="form-label">Segmento</label>
-              <input type="text" class="form-control" id="segmentoCotacao" placeholder="Ex: Vidros, Transportes, etc.">
-            </div>
-
             <hr>
             <h6>Produtos para a cotação</h6>
             <div id="listaProdutos">
@@ -277,6 +271,89 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="modalCancelarCotacao" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Confirmação de Cancelamento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja mesmo cancelar cotação?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger">Sim, cancelar!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalDetalhesCotacaoEncerrada" tabindex="-1" aria-labelledby="modalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Informações da cotação encerrada!</h5>
+        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nomeEmpresaGanhadora" class="form-label" style="font-size: 20px; color: #0069d9">Nome da Empresa Ganhadora:</label>
+            <p>Trans AM Transportes.</p>
+          </div>
+          <div class="mb-3">
+            <label for="Produtos" class="form-label" style="font-size: 20px; color: #0069d9;">Produtos Orçados:</label>
+            <p>Luva Anticorte CA 32036 TAM G</p>
+            <p>Capacete Plastcor CA 31469</p>
+          </div>
+          <div class="mb-3">
+            <label for="valor" class="form-label" style="font-size: 20px; color: #0069d9;">Valor Final:</label>
+            <p>R$457,58</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalDetalhesCotacao" tabindex="-1" aria-labelledby="modalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Informações da cotação!</h5>
+        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nomeEmpresa" class="form-label" style="font-size: 20px; color: #0069d9">Fornecedor:</label>
+            <p>Prosul EPI`S.</p>
+          </div>
+          <div class="mb-3">
+            <label for="Produtos" class="form-label" style="font-size: 20px; color: #0069d9;">Produtos Orçados:</label>
+            <p>Protetor solar FPS 60 200ML</p>
+            
+          </div>
+          <div class="mb-3">
+            <label for="valor" class="form-label" style="font-size: 20px; color: #0069d9;">Valor Final:</label>
+            <p>R$127,86</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aprovar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <footer class="footer">
     <p>© 2025 Portal de Compras - Todos os direitos reservados</p>
